@@ -1,0 +1,27 @@
+# docker-compose up -d db; docker-compose up -d app
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=miniflux
+      - POSTGRES_PASSWORD=secret
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  app:
+    image: miniflux/miniflux
+    ports:
+      - 897:8080
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=test123
+
+volumes:
+  db:
