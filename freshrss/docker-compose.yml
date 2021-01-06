@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     image: freshrss/freshrss
-    restart: unless-stopped
+    restart: always
     ports:
       - 543:80
     volumes:

@@ -3,6 +3,7 @@ version: '3'
 services:
   app:
     image: miniflux/miniflux
+    restart: always
     ports:
       - 897:8080
     depends_on:

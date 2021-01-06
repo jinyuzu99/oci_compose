@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  podsync:
+  app:
     image: mxpv/podsync
     restart: always
     ports:
