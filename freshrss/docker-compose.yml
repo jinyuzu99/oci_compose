@@ -5,7 +5,7 @@ services:
     image: freshrss/freshrss
     restart: unless-stopped
     ports:
-      - 533:80
+      - 543:80
     volumes:
       - data:/var/www/FreshRSS/data
       - ./extensions:/var/www/FreshRSS/extensions
