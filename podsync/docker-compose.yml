@@ -1,3 +1,5 @@
+# https://github.com/mxpv/podsync/blob/master/docker-compose.yml
+
 version: '3'
 
 services:

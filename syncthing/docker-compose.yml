@@ -1,0 +1,13 @@
+# https://github.com/syncthing/syncthing/blob/main/README-Docker.md
+
+version: '3'
+
+services:
+  app:
+    image: syncthing/syncthing
+    restart: always
+    ports:
+      - 8384:8384
+      - 22000:22000
+    volumes:
+      - .data:/var/syncthing

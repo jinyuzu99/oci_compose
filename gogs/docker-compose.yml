@@ -1,0 +1,16 @@
+# https://github.com/gogs/gogs/tree/master/docker
+
+version: '3'
+
+services:
+  app:
+    image: gogs/gogs
+    restart: always
+    ports:
+      - 10022:22
+      - 10080:3000
+    volumes:
+      - data:/data
+
+volumes:
+  data:
