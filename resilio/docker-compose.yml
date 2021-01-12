@@ -1,0 +1,15 @@
+# https://hub.docker.com/r/resilio/sync
+version: '3'
+
+services:
+  app:
+    image: resilio/sync
+    restart: always
+    ports:
+      - 8888:8888
+      - 55555:55555
+    volumes:
+      - data:/sync
+
+  volumes:
+    data:
