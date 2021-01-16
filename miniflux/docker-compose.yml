@@ -1,4 +1,5 @@
 # https://miniflux.app/docs/installation.html#docker
+# https://localhost:897
 
 version: '3'
 
@@ -11,17 +12,17 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable
+      - DATABASE_URL=postgres://miniflux:password@db/miniflux?sslmode=disable
       - RUN_MIGRATIONS=1
       - CREATE_ADMIN=1
-      - ADMIN_USERNAME=admin
-      - ADMIN_PASSWORD=test123
+      - ADMIN_USERNAME=root
+      - ADMIN_PASSWORD=password
 
   db:
     image: postgres
     environment:
       - POSTGRES_USER=miniflux
-      - POSTGRES_PASSWORD=secret
+      - POSTGRES_PASSWORD=password
     volumes:
       - db:/var/lib/postgresql/data
 
