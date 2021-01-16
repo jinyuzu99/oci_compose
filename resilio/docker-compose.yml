@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/resilio/sync
-# https://localhost:8888
+# http://localhost:8888
 
 version: '3'
 

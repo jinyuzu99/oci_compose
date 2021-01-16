@@ -1,4 +1,5 @@
 # https://github.com/mxpv/podsync/blob/master/docker-compose.yml
+# http://localhost:993
 
 version: '3'
 

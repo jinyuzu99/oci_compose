@@ -1,5 +1,5 @@
 # https://github.com/nextcloud/docker
-# https://localhost:843
+# http://localhost:843
 
 version: '3'
 

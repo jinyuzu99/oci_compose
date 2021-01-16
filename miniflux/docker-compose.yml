@@ -1,5 +1,5 @@
 # https://miniflux.app/docs/installation.html#docker
-# https://localhost:897
+# http://localhost:897
 
 version: '3'
 
