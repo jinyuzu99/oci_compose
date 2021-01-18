@@ -1,6 +1,5 @@
-# podsync
-/podsync/data
-/podsync/config.toml
+# data
+/*/data
 
 # linux
 *~

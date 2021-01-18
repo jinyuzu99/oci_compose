@@ -4,11 +4,11 @@
 version: '3'
 
 services:
-  app:
-    image: mxpv/podsync
-    restart: always
-    ports:
-      - 993:80
-    volumes:
-      - ./config.toml:/app/config.toml
-      - ./data:/app/data/
+    podsync:
+        image: mxpv/podsync
+        restart: always
+        ports:
+            - 993:80
+        volumes:
+            - ./data/config.toml:/app/config.toml
+            - ./data/data:/app/data

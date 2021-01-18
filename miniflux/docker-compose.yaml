@@ -4,27 +4,27 @@
 version: '3'
 
 services:
-  app:
-    image: miniflux/miniflux
-    restart: always
-    ports:
-      - 897:8080
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://miniflux:password@db/miniflux?sslmode=disable
-      - RUN_MIGRATIONS=1
-      - CREATE_ADMIN=1
-      - ADMIN_USERNAME=root
-      - ADMIN_PASSWORD=password
+    miniflux:
+        image: miniflux/miniflux
+        restart: always
+        ports:
+            - 897:8080
+        depends_on:
+            - database
+        environment:
+            - DATABASE_URL=postgres://miniflux:password@database/miniflux?sslmode=disable
+            - RUN_MIGRATIONS=1
+            - CREATE_ADMIN=1
+            - ADMIN_USERNAME=root
+            - ADMIN_PASSWORD=password
 
-  db:
-    image: postgres
-    environment:
-      - POSTGRES_USER=miniflux
-      - POSTGRES_PASSWORD=password
-    volumes:
-      - db:/var/lib/postgresql/data
+    database:
+        image: postgres
+        environment:
+            - POSTGRES_USER=miniflux
+            - POSTGRES_PASSWORD=password
+        volumes:
+            - database:/var/lib/postgresql/data
 
 volumes:
-  db:
+    database:
