@@ -10,21 +10,21 @@ services:
         ports:
             - 897:8080
         depends_on:
-            - database
+            - postgres
         environment:
-            - DATABASE_URL=postgres://miniflux:password@database/miniflux?sslmode=disable
+            - DATABASE_URL=postgres://root:password@postgres/postgres?sslmode=disable
             - RUN_MIGRATIONS=1
             - CREATE_ADMIN=1
             - ADMIN_USERNAME=root
             - ADMIN_PASSWORD=password
 
-    database:
-        image: postgres
+    postgres:
+        image: postgres:alpine
         environment:
-            - POSTGRES_USER=miniflux
+            - POSTGRES_USER=root
             - POSTGRES_PASSWORD=password
         volumes:
-            - database:/var/lib/postgresql/data
+            - postgres:/var/lib/postgresql/data
 
 volumes:
-    database:
+    postgres:
