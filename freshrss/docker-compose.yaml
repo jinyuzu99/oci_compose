@@ -1,11 +1,12 @@
 # https://github.com/FreshRSS/FreshRSS/blob/master/Docker/docker-compose.yml
+# if arm use freshrss/freshrss:arm
 # http://localhost:543
 
 version: '3'
 
 services:
     freshrss:
-        image: freshrss/freshrss
+        image: freshrss/freshrss:alpine
         restart: always
         ports:
             - 543:80
