@@ -1,5 +1,5 @@
 # https://github.com/DIYgod/RSSHub/blob/master/docker-compose.yml
-# http://localhost:533
+# http://localhost:1200
 
 version: '3'
 
@@ -8,13 +8,7 @@ services:
         image: diygod/rsshub
         restart: always
         ports:
-            - 533:1200
+            - 1200:1200
         environment:
             NODE_ENV: production
-            PUPPETEER_WS_ENDPOINT: 'ws://browserless:3000'
-        depends_on:
-            - browserless
 
-    browserless:
-        image: browserless/chrome
-        restart: always
