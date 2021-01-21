@@ -7,11 +7,11 @@ services:
         image: nextcloud
         restart: always
         ports:
-            - 843:80
+            - 841:80
         volumes:
             - data:/var/www/html # app data
             - ./data/user:/var/www/html/data # user data
-            - ./data/config:/var/www/html/data/config
+            - ./data/config:/var/www/html/config
 
 volumes:
     data:
