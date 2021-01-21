@@ -1,5 +1,4 @@
 # https://github.com/gogs/gogs/tree/main/docker
-# http://localhost:3000
 
 version: '3'
 
@@ -8,7 +7,7 @@ services:
         image: gogs/gogs
         restart: always
         ports:
-            - 3000:3000
+            - 3000:3000 # gui
             - 1022:22
         volumes:
             - ./data:/data

@@ -1,5 +1,4 @@
 # https://github.com/DIYgod/RSSHub/blob/master/docker-compose.yml
-# http://localhost:1200
 
 version: '3'
 
@@ -11,4 +10,3 @@ services:
             - 1200:1200
         environment:
             NODE_ENV: production
-

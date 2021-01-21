@@ -1,5 +1,4 @@
 # https://hub.docker.com/r/resilio/sync
-# http://localhost:8888
 
 version: '3'
 
@@ -8,7 +7,7 @@ services:
         image: resilio/sync
         restart: always
         ports:
-            - 8888:8888
+            - 8888:8888 # gui
             - 55555:55555
         volumes:
             - ./data:/mnt/sync

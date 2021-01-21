@@ -1,5 +1,4 @@
 # https://github.com/syncthing/syncthing/blob/main/README-Docker.md
-# http://localhost:8384
 
 version: '3'
 
@@ -8,7 +7,7 @@ services:
         image: syncthing/syncthing
         restart: always
         ports:
-            - 8384:8384
+            - 8384:8384 # gui
             - 22000:22000
         volumes:
             - ./data:/var/syncthing

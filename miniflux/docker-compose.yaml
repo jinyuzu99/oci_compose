@@ -1,5 +1,4 @@
 # https://miniflux.app/docs/installation.html#docker
-# http://localhost:897
 
 version: '3'
 
