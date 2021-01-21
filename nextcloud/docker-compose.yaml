@@ -1,5 +1,4 @@
 # https://github.com/nextcloud/docker
-# http://localhost:843
 
 version: '3'
 
@@ -11,7 +10,8 @@ services:
             - 843:80
         volumes:
             - data:/var/www/html # app data
-            - ./data:/var/www/html/data # user data
+            - ./data/user:/var/www/html/data # user data
+            - ./data/config:/var/www/html/data/config
 
 volumes:
     data:
