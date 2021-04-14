@@ -1,0 +1,5 @@
+rancher:
+  docker:
+    tls: true
+ssh_authorized_keys:
+  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHL07Yf8zEjsb/KpbZUKbkoKGFhzMwQZu/cMaqlqeYc

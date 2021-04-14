@@ -3,14 +3,14 @@
 version: '3'
 
 services:
-    gogs:
-        image: gogs/gogs
-        restart: always
-        ports:
-            - 3000:3000 # gui
-            - 1022:22
-        volumes:
-            - ./data:/data
+  gogs:
+    image: gogs/gogs
+    restart: always
+    ports:
+      - 3000:3000 # gui
+      - 1022:22
+    volumes:
+      - ./data:/data
 
 volumes:
-    data:
+  data:

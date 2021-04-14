@@ -3,15 +3,15 @@
 version: '3'
 
 services:
-    nextcloud:
-        image: nextcloud
-        restart: always
-        ports:
-            - 841:80
-        volumes:
-            - data:/var/www/html # app data
-            - ./data/user:/var/www/html/data # user data
-            - ./data/config:/var/www/html/config
+  nextcloud:
+    image: nextcloud
+    restart: always
+    ports:
+      - 841:80
+    volumes:
+      - data:/var/www/html # app data
+      - ./data/user:/var/www/html/data # user data
+      - ./data/config:/var/www/html/config
 
 volumes:
-    data:
+  data:

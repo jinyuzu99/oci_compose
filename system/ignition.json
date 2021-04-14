@@ -1,13 +1,15 @@
 {
 	"ignition": {
-		"version": "3.2.0"
+		"version": "3.0.0"
 	},
 	"passwd": {
 		"users": [
 			{
 				"name": "root",
-				"passwordHash": "passowrd",
-				"sshAuthorizedKeys": ["ssh-rsa veryLongRSAPublicKey"]
+				"passwordHash": "OsVUFwcrxGqM6",
+				"sshAuthorizedKeys": [
+					"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHL07Yf8zEjsb/KpbZUKbkoKGFhzMwQZu/cMaqlqeYc"
+				]
 			}
 		]
 	}
