@@ -1,0 +1,14 @@
+# https://www.home-assistant.io/installation/linux#install-home-assistant-container
+
+version: '3'
+
+services:
+  homeassistant:
+    image: homeassistant/home-assistant
+    restart: always
+    ports:
+      - 8123:8123
+    # network_mode: host
+    volumes:
+      - ./data/config:/config
+      - /etc/localtime:/etc/localtime:ro
