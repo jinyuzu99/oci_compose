@@ -1,6 +1,6 @@
 # https://github.com/FreshRSS/FreshRSS/blob/master/Docker/docker-compose.yml
 
-version: '3'
+version: 3
 
 services:
   freshrss:

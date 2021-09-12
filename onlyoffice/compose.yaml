@@ -1,6 +1,6 @@
 # https://github.com/ONLYOFFICE/Docker-DocumentServer/blob/master/docker-compose.yml
 
-version: '3'
+version: 3
 
 services:
   onlyoffice-documentserver:
@@ -28,11 +28,11 @@ services:
     restart: always
     stop_grace_period: 60s
     volumes:
-       - /var/www/onlyoffice/Data
-       - /var/log/onlyoffice
-       - /var/lib/onlyoffice/documentserver/App_Data/cache/files
-       - /var/www/onlyoffice/documentserver-example/public/files
-       - /usr/share/fonts
+      - /var/www/onlyoffice/Data
+      - /var/log/onlyoffice
+      - /var/lib/onlyoffice/documentserver/App_Data/cache/files
+      - /var/www/onlyoffice/documentserver-example/public/files
+      - /usr/share/fonts
 
   onlyoffice-rabbitmq:
     container_name: onlyoffice-rabbitmq
