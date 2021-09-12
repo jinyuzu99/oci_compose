@@ -17,4 +17,4 @@ volumes:
   ocis-data:
 
 networks:
-  ocis-net:
+  ocis-network:
