@@ -1,6 +1,6 @@
 # https://miniflux.app/docs/installation.html#docker
 
-version: 3
+version: '3'
 
 services:
   miniflux:

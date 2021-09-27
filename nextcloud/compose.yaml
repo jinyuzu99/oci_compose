@@ -1,6 +1,6 @@
 # https://github.com/nextcloud/docker
 
-version: 3
+version: '3'
 
 services:
   nextcloud:

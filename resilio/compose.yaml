@@ -1,6 +1,6 @@
 # https://hub.docker.com/r/resilio/sync
 
-version: 3
+version: '3'
 
 services:
   resilio:

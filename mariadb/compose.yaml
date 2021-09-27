@@ -1,4 +1,6 @@
-version: 3
+# https://github.com/MariaDB/mariadb-docker
+
+version: '3'
 services:
   mariadb:
     image: mariadb

@@ -1,6 +1,6 @@
 # https://github.com/gogs/gogs/tree/main/docker
 
-version: 3
+version: '3'
 
 services:
   gogs:

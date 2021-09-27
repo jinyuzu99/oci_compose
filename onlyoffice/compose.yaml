@@ -1,6 +1,6 @@
 # https://github.com/ONLYOFFICE/Docker-DocumentServer/blob/master/docker-compose.yml
 
-version: 3
+version: '3'
 
 services:
   onlyoffice-documentserver:
