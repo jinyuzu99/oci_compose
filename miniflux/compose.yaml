@@ -14,8 +14,8 @@ services:
       - DATABASE_URL=postgres://root:$POSTGRES_PASSWORD@postgres/postgres?sslmode=disable
       - RUN_MIGRATIONS=1
       - CREATE_ADMIN=1
-      - ADMIN_USERNAME=seele
-      - ADMIN_PASSWORD=qs231675
+      - ADMIN_USERNAME=root
+      - ADMIN_PASSWORD=password
 
   postgres:
     image: postgres:alpine
