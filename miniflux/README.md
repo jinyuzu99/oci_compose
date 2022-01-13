@@ -1,45 +1,45 @@
 # miniflux
-## 简介
+## Introduction
 Miniflux is a minimalist and opinionated feed reader.
 
-[官网](https://miniflux.app/)
+[Website](https://miniflux.app/)
 [GitHub](https://github.com/miniflux/v2.git)
 
-### 配置环境
-[docker-compose配置](../docker-compose/readme.md)
+### Configuring the environment
+[docker-compose configuration](. /docker-compose/readme.md)
 
-## 使用教程
+## Using the tutorial
     [services][ports]:
         - 897:8080
-    宿主机将897端口对接到docker的8080端口，一般来说，docker的端口不可随意更改。
+    The host will pair port 897 to docker's port 8080. In general, docker's port cannot be changed arbitrarily.
 
-    [services][miniflux][environment]内条目是环境变量
-    格式为 
-     - $环境变量名称=$环境变量内容
+    The entry in [services][miniflux][environment] is an environment variable
+    The format is 
+     - $environment variable name=$environment variable content
 
     [postgres][environment]
-    环境变量配置的是数据库用户名密码，务必自行生成高强度密码。
-    并在[services][miniflux][environment][DATABASE_URL] 中修改
+    The environment variable is configured with the database username password, be sure to generate your own high strength password.
+    And change it in [services][miniflux][environment][DATABASE_URL]
 
-官方环境变量列表：[链接](https://miniflux.app/miniflux.1.html)
+Official environment variables list: [link](https://miniflux.app/miniflux.1.html)
 
-## 推荐的环境变量配置
-|变量名|说明|
+## Recommended environment variable configuration
+|variable name|description|
 |-----|-----|
-|POLLING_FREQUENCY|刷新feed的间隔时间，（分钟）|
-|CLEANUP_ARCHIVE_UNREAD_DAYS|清除未阅读的文章，-1不清除，（天）|
-|CLEANUP_ARCHIVE_READ_DAYS=-1|清除已阅读的文章，-1不清除，（天）|
-|BASE_URL|用于生成HTML链接的基本URL和cookie的基本路径。（但在这里并不是就这样添加域名，仅有展示效果）|
+|POLLING_FREQUENCY|Refresh feed interval, (minutes)|
+|CLEANUP_ARCHIVE_UNREAD_DAYS|Clear unread articles, -1 not clear, (days)|
+|CLEANUP_ARCHIVE_READ_DAYS=-1|clears read articles, -1 does not clear, (days)|
+|BASE_URL|The base URL used to generate the HTML link and the base path to the cookie. (but not just add the domain name here, only the display effect) |
 
-## 添加自定义域名
+## Add a custom domain name
 ### nginx
 ```
 server {
-    server_name     $YOUR_DOMAIN_WITHOUT_HTTP(S);
-    listen          80;
+    server_name $YOUR_DOMAIN_WITHOUT_HTTP(S);
+    listen 80;
 
     location / {
-        proxy_pass http://127.0.0.1:897;#这里的897可设置为环境变量中自定义的宿主机端口。
+        proxy_pass http://127.0.0.1:897; # 897 here can be set to a custom host port in the environment variable.
         proxy_redirect off;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -49,8 +49,10 @@ server {
 }
 ```
 
-### 宝塔
-1. 创建一个静态网站
-2. 设置->反向代理->添加如下图所示
+### Pagoda
+1. create a static website
+2. Set up -> reverse proxy -> add the following image
 ![image.png](https://s2.loli.net/2022/01/13/KV7AP6FtlLvOMfj.png)
-3. 重启nginx
+3. restart nginx
+
+Translated with www.DeepL.com/Translator (free version)
