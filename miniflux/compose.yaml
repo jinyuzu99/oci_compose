@@ -4,24 +4,24 @@ version: '3'
 
 services:
   miniflux:
-    image: miniflux/miniflux
+    image: miniflux/miniflux:nightly
     restart: always
     ports:
       - 897:8080
     depends_on:
       - postgres
     environment:
-      - DATABASE_URL=postgres://root:password@postgres/postgres?sslmode=disable
+      - DATABASE_URL=postgres://root:$POSTGRES_PASSWORD@postgres/postgres?sslmode=disable
       - RUN_MIGRATIONS=1
       - CREATE_ADMIN=1
-      - ADMIN_USERNAME=root
-      - ADMIN_PASSWORD=password
+      - ADMIN_USERNAME=seele
+      - ADMIN_PASSWORD=qs231675
 
   postgres:
     image: postgres:alpine
     environment:
       - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
     volumes:
       - postgres:/var/lib/postgresql/data
 
