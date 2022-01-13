@@ -4,7 +4,7 @@ version: '3'
 
 services:
   miniflux:
-    image: miniflux/miniflux:nightly
+    image: miniflux/miniflux
     restart: always
     ports:
       - 897:8080
