@@ -1,25 +1,27 @@
-## 安装docker环境
+## Install docker environment
 ```bash
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 
-## 安装docker-compose 环境
-[官方文档](https://docs.docker.com/compose/install/)
+## Installing the docker-compose environment
+[official documentation](https://docs.docker.com/compose/install/)
 
 
-## 简易使用教程
-[官方文档](https://docs.docker.com/compose/)
-|命令|说明|
-|---|---|
-|docker-compose up|根据当前同级目录下的docker-compose。yaml或者yml文件前台启动|
-|docker-compose up -d|根据当前同级目录下的docker-compose。yaml或者yml文件后台启动|
-|docker-compose down|根据当前同级目录下的docker-compose。yaml或者yml文件删除已有的docker与docker网络|
+## Easy to use tutorial
+[Official Documentation](https://docs.docker.com/compose/)
+|Commands|Instructions|
+|docker-compose up
+|docker-compose up| based on the current docker-compose in the same level directory. yaml or yml file foreground start|
+|docker-compose up -d|Based on the docker-compose. yaml or yml file in the current sibling directory to start in the background|
+|docker-compose down|deletes existing dockers and docker networks based on the docker-compose. yaml or yml file in the current sibling directory|
 
-## 注意事项
-1. docker服务默认不在重启后自动启动，
+## Caution
+1. docker service does not start automatically after reboot by default.
 ```bash
 systemctl enable docker
 ```
 ![image.png](https://s2.loli.net/2022/01/13/ORdB1P6IkXaliUp.png)
 
-如果无法使用，那就需要手写启动脚本了
+If that doesn't work, then you'll need to write the startup script by hand
+
+Translated with www.DeepL.com/Translator (free version)
