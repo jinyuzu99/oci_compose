@@ -1,9 +1,0 @@
-"external_apps": [
-  {
-    "id": "onlyoffice",
-    "path": "https://localhost:9200/onlyoffice.js",
-    "config": {
-      "server": "https://oc10.example.org"
-    }
-  }
-]

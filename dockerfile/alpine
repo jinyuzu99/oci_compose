@@ -1,5 +1,5 @@
 FROM alpine
 EXPOSE 7070
 WORKDIR /root
-RUN apk upgrade --no-cache; apk add --no-cache bash
+RUN apk upgrade --no-cache && apk add --no-cache bash
 CMD sh ./

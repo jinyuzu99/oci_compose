@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress:php8.1
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: db-user
+      WORDPRESS_DB_PASSWORD: db-password
+      WORDPRESS_DB_NAME: db-name
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_DATABASE: db-name
+      MARIADB_USER: db-user
+      MARIADB_PASSWORD: db-password
+      MARIADB_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:

@@ -1,4 +1,5 @@
 # https://github.com/owncloud/ocis
+# http://localhost:9200
 
 version: '3.7'
 
@@ -8,13 +9,5 @@ services:
     restart: always
     ports:
       - 9200:9200
-    environment:
-      OCIS_LOG_LEVEL: error
     volumes:
-      - ocis-data:/var/tmp/ocis
-
-volumes:
-  ocis-data:
-
-networks:
-  ocis-network:
+      - ./data:/var/tmp/ocis

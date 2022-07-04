@@ -1,0 +1,15 @@
+# https://searx.github.io/searx/admin/installation-docker.html
+# http://localhost:2342 admin yacy
+
+version: "3"
+
+services:
+  server:
+    image: searx/searx
+    restart: always
+    volumes:
+      - ./data:/etc/searx
+    ports:
+      - 2342:8080
+volumes:
+  data:

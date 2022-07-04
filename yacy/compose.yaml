@@ -1,0 +1,17 @@
+# https://github.com/yacy/yacy_search_server
+# http://localhost:8443 admin yacy
+
+version: "3"
+
+services:
+  server:
+    image: yacy/yacy_search_server
+    restart: always
+    volumes:
+      - ./data:/opt/yacy_search_server/DATA
+    ports:
+      - 8090:8090
+      - 8443:8443
+
+volumes:
+  data:

@@ -1,0 +1,6 @@
+{
+  "registry-mirrors" : [
+    "http://registry.docker-cn.com",
+    "http://docker.mirrors.ustc.edu.cn"
+  ]
+}

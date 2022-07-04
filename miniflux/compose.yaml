@@ -1,4 +1,6 @@
 # https://miniflux.app/docs/installation.html#docker
+# PASSWORD=`openssl rand -base64 15`
+# http://localhost:897
 
 version: '3'
 
@@ -11,7 +13,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - DATABASE_URL=postgres://root:password@postgres/postgres?sslmode=disable
+      - DATABASE_URL=postgres://root:$PASSWORD@postgres/postgres?sslmode=disable
       - RUN_MIGRATIONS=1
       - CREATE_ADMIN=1
       - ADMIN_USERNAME=root
@@ -21,7 +23,7 @@ services:
     image: postgres:alpine
     environment:
       - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=$PASSWORD
     volumes:
       - postgres:/var/lib/postgresql/data
 
