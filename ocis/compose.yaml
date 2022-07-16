@@ -1,13 +1,17 @@
 # https://github.com/owncloud/ocis
 # http://localhost:9200
 
-version: '3.7'
-
 services:
   ocis:
     image: owncloud/ocis
     restart: always
     ports:
       - 9200:9200
+    environment:
+      # INSECURE: needed if oCIS / Traefik is using self generated certificates
+      OCIS_INSECURE: "true"
     volumes:
-      - ./data:/var/tmp/ocis
+      - ./ocis.yaml:/etc/ocis/ocis.yaml
+      - ocis-data:/var/lib/ocis
+volumes:
+  ocis-data:
