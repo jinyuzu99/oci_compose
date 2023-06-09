@@ -1,4 +1,0 @@
-FROM ubuntu:rolling
-RUN apt update -qq && apt upgrade -qq;\
-    apt install -qq automake libcurl4-openssl-dev git make gcc;\
-    apt autoremove -qq && apt clean -qq &&  && rm -rf /var/lib/apt/lists/*

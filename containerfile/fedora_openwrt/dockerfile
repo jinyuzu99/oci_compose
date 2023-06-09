@@ -1,0 +1,33 @@
+# for macos/arm64 build
+# docker build --platform linux/amd64 -t fedora_openwrt .
+# docker run -it --platform linux/amd64 docker.io/library/fedora_openwrt
+# run
+# docker run -it docker.io/library/fedora_openwrt
+
+FROM fedora
+
+# install package
+RUN dnf upgrade -y &&\
+	dnf install -y \
+	bash-completion bzip2 gcc gcc-c++ git make ncurses-devel patch \
+	rsync tar unzip wget which diffutils python2 python3 perl-base \
+	perl-Data-Dumper perl-File-Compare perl-File-Copy perl-FindBin \
+	perl-IPC-Cmd perl-Thread-Queue
+
+# choose version
+ENV version=v22.03.5
+
+# clone git and install
+RUN	cd ~ &&\
+	git clone https://git.openwrt.org/openwrt/openwrt.git &&\
+	cd openwrt &&\
+	git checkout $version &&\
+	./scripts/feeds update -a && ./scripts/feeds install -a
+
+# echo install.sh
+RUN echo 'cd ~/openwrt &&\
+	make menuconfig && make -j$(nproc) kernel_menuconfig &&\
+	make -j$(nproc) defconfig download clean world'\
+	> ~/setup.sh
+
+CMD sh ~/setup.sh
