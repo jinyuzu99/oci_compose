@@ -1,5 +1,5 @@
 # https://www.home-assistant.io/installation/linux#install-home-assistant-container
-# http://<host>:8123
+# http://localhost:8123
 
 version: '3'
 
@@ -10,5 +10,4 @@ services:
     network_mode: host
     privileged: true
     volumes:
-      - ./config:/config
-      - /etc/localtime:/etc/localtime:ro
+      - ./data:/config

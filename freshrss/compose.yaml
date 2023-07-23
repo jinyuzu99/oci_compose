@@ -7,7 +7,7 @@ services:
     image: freshrss/freshrss:alpine # arm use freshrss/freshrss:arm
     restart: always
     ports:
-      - 543:80
+      - 543:80 #gui
     volumes:
       - data:/var/www/FreshRSS/data
       - ./data/extensions:/var/www/FreshRSS/extensions

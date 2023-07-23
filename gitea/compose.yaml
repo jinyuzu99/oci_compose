@@ -8,8 +8,8 @@ services:
     volumes:
       - ./data:/data
     ports:
-      - "3000:3000" #gui
-      - "222:22"
+      - 3000:3000 #gui
+      - 222:22
 
 volumes:
   data:
