@@ -1,0 +1,12 @@
+# https://github.com/AdguardTeam/AdGuardHome/wiki/Docker
+# http://localhost:3000/
+
+version: '3'
+
+services:
+   adguardhome:
+     image: adguard/adguardhome
+     restart: always
+     network_mode: host
+     volumes:
+       - ./data:/opt/adguardhome
