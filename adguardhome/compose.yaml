@@ -9,4 +9,5 @@ services:
      restart: always
      network_mode: host
      volumes:
-       - ./data:/opt/adguardhome
+       - ./data/work:/opt/adguardhome/work
+       - ./data/conf:/opt/adguardhome/conf
