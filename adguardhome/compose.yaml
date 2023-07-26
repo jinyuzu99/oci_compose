@@ -7,16 +7,7 @@ services:
    adguardhome:
      image: adguard/adguardhome
      restart: always
-     ports:
-       - 53:53
-       - 67:67
-       - 68:68
-       - 443:443
-       - 784:784
-       - 853:853
-       - 3000:3000
-       - 5443:5443
-       - 6060:6060
+     network_mode: host
      volumes:
        - ./data/work:/opt/adguardhome/work
        - ./data/conf:/opt/adguardhome/conf
